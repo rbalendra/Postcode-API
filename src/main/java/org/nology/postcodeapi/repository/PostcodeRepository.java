@@ -21,4 +21,6 @@ public interface PostcodeRepository extends JpaRepository<Postcode, Long> {
 
     List<Postcode> findByState(State state); //search by state
 
+    Optional<Postcode> findByCodeAndState(String code, State state);
+
 }
