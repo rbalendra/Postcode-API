@@ -17,7 +17,7 @@ import org.nology.postcodeapi.repository.SuburbRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public abstract class SuburbServiceImpl implements SuburbService{
+public class SuburbServiceImpl implements SuburbService{
 
     // ───────────────────────────── Dependency Injection ──────────────────────────────
     private final SuburbRepository suburbRepository; // lets us talk top suburb table in db
@@ -38,7 +38,7 @@ public abstract class SuburbServiceImpl implements SuburbService{
     @Override
     public List<SuburbDTO>listSuburbsByPostcode(String postcodeCode){
         //  Look in the DB for all suburbs that have the given postcode
-        List<Suburb> suburbs = suburbRepository.findByPostcode(postcodeCode);
+        List<Suburb> suburbs = suburbRepository.findByPostcode_Code(postcodeCode);
 
         // If no suburbs found, throw an error so the user knows
         if (suburbs.isEmpty()) {

@@ -9,7 +9,7 @@ import org.nology.postcodeapi.repository.PostcodeRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PostcodeServiceImpl {
+public class PostcodeServiceImpl implements PostcodeService {
 
     // ───────────────────────────── Dependency Injection ──────────────────────────────
     private final PostcodeRepository postcodeRepository;

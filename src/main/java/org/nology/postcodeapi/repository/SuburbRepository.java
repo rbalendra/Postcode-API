@@ -1,5 +1,6 @@
 package org.nology.postcodeapi.repository;
 
+import org.nology.postcodeapi.entity.Postcode;
 import org.nology.postcodeapi.entity.Suburb;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,7 +12,7 @@ public interface SuburbRepository extends JpaRepository<Suburb, Long> {
 
     // ──────────────────────────────────── Queries ────────────────────────────────────
 
-    List<Suburb> findByPostcode(String code); //find suburbs given the postcode
+    List<Suburb> findByPostcode_Code(String postcodeCode);
 
 
     @Query("SELECT s FROM Suburb s WHERE LOWER(s.name) = LOWER(:name)")
